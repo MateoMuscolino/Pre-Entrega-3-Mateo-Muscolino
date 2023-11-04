@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <h1>Iniciar Sesión</h1>
+    
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre_de_usuario">Nombre de Usuario:</label>
+        <input type="text" name="nombre_de_usuario" required><br>
+        
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" required><br>
+        
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+</body>
+</html>
+

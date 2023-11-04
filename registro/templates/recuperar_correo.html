@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recuperar Correo Electrónico</title>
+</head>
+<body>
+    <h1>Recuperar Correo Electrónico</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre_de_usuario">Nombre de Usuario:</label>
+        <input type="text" name="nombre_de_usuario" required><br>
+        
+        <button type="submit">Recuperar Correo Electrónico</button>
+    </form>
+    
+    {% if correo %}
+    <p>Correo Electrónico: {{ correo }}</p>
+    {% endif %}
+</body>
+</html>
