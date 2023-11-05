@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Usuario
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login # Son importaciones en django que me ayudan con la view de log-in
 from django.contrib.auth.models import User
 
 def registro(request):
@@ -39,7 +39,7 @@ def recuperar_correo(request):
     if request.method == 'POST':
         nombre_de_usuario = request.POST.get('nombre_de_usuario')
         try:
-            usuario = User.objects.get(username=nombre_de_usuario)
+            usuario = User.objects.get(username=nombre_de_usuario)  # El try-except es como un repeat-until :)
             correo = usuario.email
         except User.DoesNotExist:
             correo = "El nombre de usuario no existe"
